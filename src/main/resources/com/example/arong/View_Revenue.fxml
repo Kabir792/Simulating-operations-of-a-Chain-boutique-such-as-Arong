@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.arong.ViewRevenueController">
+
+    <Label fx:id="loginMessageLabel" layoutX="150" layoutY="170" textFill="red" />
+
+
+    <!-- ================= DASHBOARD (EVENT 2) ================= -->
+    <Label layoutX="50" layoutY="220" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Dashboard" />
+
+    <!-- Button to open Total Revenue view -->
+    <Button fx:id="viewRevenueButton" layoutX="50" layoutY="260" onAction="#handleViewRevenue" prefWidth="180" text="View Total Revenue" />
+
+
+    <!-- ========== TOTAL REVENUE VIEW (EVENT 3 & 4) ========== -->
+    <Label layoutX="50" layoutY="320" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Total Revenue" />
+
+    <Label layoutX="50" layoutY="350" text="Total Revenue by Period" />
+
+    <!-- Bar Chart for total revenue (EVENT 3) -->
+    <BarChart fx:id="revenueBarChart" layoutX="50" layoutY="380" prefHeight="170" prefWidth="700">
+        <xAxis>
+            <CategoryAxis label="Period" fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+            <NumberAxis fx:id="yAxis" label="Revenue" />
+        </yAxis>
+    </BarChart>
+
+    <!-- Back button (EVENT 4) -->
+    <Button fx:id="backButton" layoutX="50" layoutY="560" onAction="#handleBackToDashboard" prefWidth="100" text="Back" />
+
+</AnchorPane>

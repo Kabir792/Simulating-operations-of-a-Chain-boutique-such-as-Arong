@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="550.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.boutique.app.LoginController">
+
+    <children>
+        <Pane layoutX="237.0" layoutY="32.0" prefHeight="534.0" prefWidth="800.0">
+            <children>
+
+                <!-- MAIN TITLE -->
+                <Label layoutX="111.0" layoutY="67.0" text="BOUTIQUE LOGIN">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="28.0" />
+                    </font>
+                </Label>
+
+                <!-- SUBTITLE -->
+                <Label layoutX="72.0" layoutY="99.0" text="Simulating operations of Cats Eye / Yellow / Aarong">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+                    </font>
+                </Label>
+
+                <!-- USER ROLE SELECTION -->
+                <ComboBox fx:id="userTypeComboBox" layoutX="463.0" layoutY="111.0" prefHeight="35.0" prefWidth="247.0" promptText="Select User Role" />
+
+                <!-- USERNAME INPUT -->
+                <Label layoutX="79.0" layoutY="238.0" text="Username">
+                    <font><Font size="14.0" /></font>
+                </Label>
+                <TextField fx:id="userNameTextField" alignment="CENTER" layoutX="165.0" layoutY="228.0" prefHeight="35.0" prefWidth="260.0" promptText="Enter Username">
+                    <font><Font size="18.0" /></font>
+                </TextField>
+
+                <!-- PASSWORD INPUT -->
+                <Label layoutX="82.0" layoutY="300.0" text="Password">
+                    <font><Font size="14.0" /></font>
+                </Label>
+                <PasswordField fx:id="passwordField" alignment="CENTER" layoutX="165.0" layoutY="301.0" prefHeight="35.0" prefWidth="260.0" promptText="Enter Password">
+                    <font><Font size="18.0" /></font>
+                </PasswordField>
+
+                <!-- LOGIN BUTTON -->
+                <Button layoutX="174.0" layoutY="403.0" onAction="#handleLogin" prefHeight="35.0" prefWidth="260.0" text="LOG IN">
+                    <font><Font name="Berlin Sans FB" size="12.0" /></font>
+                </Button>
+
+                <!-- EXTRA TEXT -->
+                <Label layoutX="102.0" layoutY="368.0" text="Forget Password?">
+                    <font><Font name="Berlin Sans FB" size="16.0" /></font>
+                </Label>
+
+                <Label layoutX="295.0" layoutY="368.0" text="Register">
+                    <font><Font name="Berlin Sans FB" size="16.0" /></font>
+                </Label>
+
+                <!-- NOTIFICATION LABEL -->
+                <Label fx:id="notificationLabel" layoutX="498.0" layoutY="420.0" prefHeight="41.0" prefWidth="233.0" textFill="red">
+                    <font><Font name="Berlin Sans FB" size="14.0" /></font>
+                </Label>
+
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.arong.PreparesalariesController">
+
+    <Label fx:id="loginMessageLabel" layoutX="150" layoutY="170" textFill="red" />
+
+
+    <!-- ================= DASHBOARD (EVENT 2) ================= -->
+    <Label layoutX="50" layoutY="220" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Dashboard" />
+
+    <Button fx:id="prepareSalariesSceneButton" layoutX="50" layoutY="260" onAction="#handleDashboardPrepare" prefWidth="180" text="Prepare Salaries" />
+
+
+    <!-- ========== PREPARE SALARIES (EVENT 3,4,5,6) ========== -->
+    <Label layoutX="50" layoutY="320" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Prepare Salaries - All Staff" />
+
+    <!-- event-3 -->
+    <Button fx:id="prepareAllSalariesButton" layoutX="50" layoutY="360" onAction="#handlePrepareAllSalaries" prefWidth="250" text="Prepare Salaries for All Staff" />
+
+    <!-- event-4 -->
+    <Button fx:id="chooseAllStaffButton" layoutX="50" layoutY="400" onAction="#handleChooseAllStaff" prefWidth="200" text="Choose User (All Staff)" />
+
+    <TextArea fx:id="staffListTextArea" layoutX="320" layoutY="360" prefHeight="180" prefWidth="400" promptText="Staff list and salary details will appear here..." />
+
+    <!-- event-5 -->
+    <Button fx:id="payButton" layoutX="50" layoutY="440" onAction="#handlePay" prefWidth="100" text="Pay" />
+
+    <!-- event-6 -->
+    <Label fx:id="statusLabel" layoutX="50" layoutY="480" textFill="green" />
+
+</AnchorPane>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.arong.AccountantDashboardController"
+            prefWidth="900.0" prefHeight="600.0">
+
+    <children>
+
+        <!-- TITLE AREA -->
+        <Label text="Accountant Dashboard"
+               layoutX="50.0" layoutY="30.0"
+               style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+
+        <Label fx:id="welcomeLabel"
+               text="Welcome, Accountant"
+               layoutX="50.0" layoutY="70.0"
+               style="-fx-font-size: 14px;" />
+
+
+        <!-- MAIN MENU BUTTONS (8 ACCOUNTANT GOALS) -->
+
+        <!-- Goal 1: Prepare Salaries -->
+        <Button fx:id="prepareSalariesButton"
+                text="Prepare Salaries (All Staff)"
+                layoutX="50.0" layoutY="120.0"
+                prefWidth="280.0"
+                onAction="#handlePrepareSalaries" />
+
+        <!-- Goal 2: View Total Revenue -->
+        <Button fx:id="viewRevenueButton"
+                text="View Total Revenue"
+                layoutX="50.0" layoutY="160.0"
+                prefWidth="280.0"
+                onAction="#handleViewRevenue" />
+
+        <!-- Goal 3: Record Daily Sales -->
+        <Button fx:id="recordDailySalesButton"
+                text="Record Daily Sales"
+                layoutX="50.0" layoutY="200.0"
+                prefWidth="280.0"
+                onAction="#handleRecordDailySales" />
+
+        <!-- Goal 4: Monthly Financial Report -->
+        <Button fx:id="monthlyReportButton"
+                text="Generate Monthly Financial Report"
+                layoutX="50.0" layoutY="240.0"
+                prefWidth="280.0"
+                onAction="#handleMonthlyReport" />
+
+        <!-- Goal 5: Manage Branch Expenses -->
+        <Button fx:id="manageExpensesButton"
+                text="Manage Branch Expenses"
+                layoutX="50.0" layoutY="280.0"
+                prefWidth="280.0"
+                onAction="#handleManageExpenses" />
+
+        <!-- Goal 6: Verify Pending Payments -->
+        <Button fx:id="pendingPaymentsButton"
+                text="Verify Pending Payments"
+                layoutX="50.0" layoutY="320.0"
+                prefWidth="280.0"
+                onAction="#handlePendingPayments" />
+
+        <!-- Goal 7: Generate Tax Reports -->
+        <Button fx:id="taxReportButton"
+                text="Generate Tax Reports"
+                layoutX="50.0" layoutY="360.0"
+                prefWidth="280.0"
+                onAction="#handleTaxReport" />
+
+        <!-- Goal 8: Cash Flow Statements -->
+        <Button fx:id="cashFlowButton"
+                text="Manage Cash Flow Statements"
+                layoutX="50.0" layoutY="400.0"
+                prefWidth="280.0"
+                onAction="#handleCashFlow" />
+
+
+        <!-- LOGOUT BUTTON -->
+        <Button fx:id="logoutButton"
+                text="Logout"
+                layoutX="50.0" layoutY="460.0"
+                prefWidth="280.0"
+                onAction="#handleLogout" />
+
+        <!-- STATUS LABEL (for small messages) -->
+        <Label fx:id="statusLabel"
+               layoutX="50.0" layoutY="520.0"
+               textFill="green" />
+
+    </children>
+
+</AnchorPane>

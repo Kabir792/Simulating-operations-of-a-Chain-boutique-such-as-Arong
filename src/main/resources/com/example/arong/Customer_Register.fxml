@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.arong.CustomerRegisterController"
+            prefWidth="800" prefHeight="600">
+
+    <!-- ================= HOME PAGE (EVENT 1) ================= -->
+    <Label text="Boutique System - Home"
+           layoutX="50" layoutY="40"
+           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <Button fx:id="openRegisterButton"
+            text="Register"
+            layoutX="50" layoutY="80"
+            prefWidth="150"
+            onAction="#handleOpenRegister"/>
+
+    <!-- ================= REGISTRATION FORM (EVENT 2–6) ================= -->
+    <Label text="Customer Registration"
+           layoutX="50" layoutY="140"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- event-2: customer enters details -->
+    <Label text="Full Name:" layoutX="50" layoutY="180"/>
+    <TextField fx:id="fullNameField"
+               layoutX="180" layoutY="175"
+               prefWidth="250"
+               promptText="Enter full name"/>
+
+    <Label text="Phone Number:" layoutX="50" layoutY="215"/>
+    <TextField fx:id="phoneField"
+               layoutX="180" layoutY="210"
+               prefWidth="250"
+               promptText="Enter phone number"/>
+
+    <Label text="Email:" layoutX="50" layoutY="250"/>
+    <TextField fx:id="emailField"
+               layoutX="180" layoutY="245"
+               prefWidth="250"
+               promptText="example@mail.com"/>
+
+    <Label text="Password:" layoutX="50" layoutY="285"/>
+    <PasswordField fx:id="passwordField"
+                   layoutX="180" layoutY="280"
+                   prefWidth="250"
+                   promptText="Minimum 6 characters"/>
+
+    <Label text="Address:" layoutX="50" layoutY="320"/>
+    <TextArea fx:id="addressArea"
+              layoutX="180" layoutY="315"
+              prefWidth="300" prefHeight="80"
+              promptText="Enter full address"/>
+
+    <!-- event-3 & event-4: validation + email already exists -->
+    <Label fx:id="validationMessageLabel"
+           layoutX="50" layoutY="410"
+           textFill="red"/>
+
+    <!-- event-5: save details, event-6: success message & redirect to login -->
+    <Button fx:id="registerButton"
+            text="Register Account"
+            layoutX="50" layoutY="440"
+            prefWidth="150"
+            onAction="#handleRegister"/>
+
+    <!-- success message -->
+    <Label fx:id="statusLabel"
+           layoutX="220" layoutY="445"
+           textFill="green"/>
+
+    <!-- redirect to login page/button (event-6) -->
+    <Button fx:id="goToLoginButton"
+            text="Go to Login"
+            layoutX="50" layoutY="480"
+            prefWidth="150"
+            onAction="#handleGoToLogin"/>
+
+</AnchorPane>
