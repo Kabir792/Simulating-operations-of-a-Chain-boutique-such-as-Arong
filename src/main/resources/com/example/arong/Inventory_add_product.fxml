@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600" prefWidth="900" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_final_project.InventoryAddProductController">
+
+    <Label fx:id="loginMessageLabel" layoutX="150" layoutY="170" textFill="red" />
+
+
+    <!-- ================= DASHBOARD (EVENT 2) ================= -->
+    <Label layoutX="50" layoutY="220" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Inventory Dashboard" />
+
+    <!-- event-3: click add product -->
+    <Button fx:id="addNewProductButton" layoutX="50" layoutY="260" onAction="#handleOpenAddProduct" prefWidth="180" text="Add New Product" />
+
+
+    <!-- ================= ADD PRODUCT AREA (EVENT 4–7) ================= -->
+    <Label layoutX="50" layoutY="310" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Add New Product" />
+
+    <!-- event-4 fields -->
+    <Label layoutX="50" layoutY="350" text="Name:" />
+    <TextField fx:id="productNameField" layoutX="150" layoutY="345" prefWidth="200" />
+
+    <Label layoutX="50" layoutY="385" text="Category:" />
+    <TextField fx:id="categoryField" layoutX="150" layoutY="380" prefWidth="200" />
+
+    <Label layoutX="50" layoutY="420" text="Size:" />
+    <TextField fx:id="sizeField" layoutX="150" layoutY="415" prefWidth="200" />
+
+    <Label layoutX="50" layoutY="455" text="Price:" />
+    <TextField fx:id="priceField" layoutX="150" layoutY="450" prefWidth="200" />
+
+    <Label layoutX="50" layoutY="490" text="Quantity:" />
+    <TextField fx:id="quantityField" layoutX="150" layoutY="485" prefWidth="200" />
+
+    <!-- event-5: validation label -->
+    <Label fx:id="validationMessageLabel" layoutX="50" layoutY="520" textFill="red" />
+
+    <!-- event-6: save product -->
+    <Button fx:id="saveProductButton" layoutX="50" layoutY="550" onAction="#handleSaveProduct" prefWidth="150" text="Save Product" />
+
+    <!-- event-7: success message -->
+    <Label fx:id="statusLabel" layoutX="220" layoutY="555" textFill="green" />
+
+
+    <!-- ================= PRODUCT TABLE (REFRESH AFTER ADD) ================= -->
+    <Label layoutX="450" layoutY="310" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Current Inventory" />
+
+    <TableView fx:id="productTable" layoutX="450" layoutY="340" prefHeight="220" prefWidth="400">
+
+        <columns>
+            <TableColumn fx:id="tableNameColumn" prefWidth="120" text="Name" />
+            <TableColumn fx:id="tableCategoryColumn" prefWidth="100" text="Category" />
+            <TableColumn fx:id="tableSizeColumn" prefWidth="60" text="Size" />
+            <TableColumn fx:id="tablePriceColumn" prefWidth="60" text="Price" />
+            <TableColumn fx:id="tableQuantityColumn" prefWidth="60" text="Qty" />
+        </columns>
+
+    </TableView>
+
+</AnchorPane>

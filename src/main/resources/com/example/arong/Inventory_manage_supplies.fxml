@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_final_project.InventorySupplierController">
+
+    <children>
+
+        <Label fx:id="loginMessageLabel" layoutX="150.0" layoutY="170.0" textFill="red" />
+
+
+        <!-- ============ INVENTORY DASHBOARD (EVENT 2) ============ -->
+        <Label layoutX="50.0" layoutY="220.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Inventory Dashboard" />
+
+        <!-- event-3: Click “Manage Suppliers.” -->
+        <Button fx:id="manageSuppliersButton" layoutX="50.0" layoutY="255.0" onAction="#handleOpenManageSuppliers" prefWidth="180.0" text="Manage Suppliers" />
+
+
+        <!-- ============ MANAGE SUPPLIERS AREA (EVENT 4–7) ============ -->
+        <Label layoutX="50.0" layoutY="300.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Supplier Details" />
+
+        <!-- event-4: Enter supplier name, contact, product line -->
+        <Label layoutX="50.0" layoutY="340.0" text="Supplier Name:" />
+        <TextField fx:id="supplierNameField" layoutX="180.0" layoutY="335.0" prefWidth="250.0" promptText="Enter supplier name" />
+
+        <Label layoutX="50.0" layoutY="375.0" text="Contact Info:" />
+        <TextField fx:id="contactField" layoutX="180.0" layoutY="370.0" prefWidth="250.0" promptText="Phone / Email" />
+
+        <Label layoutX="50.0" layoutY="410.0" text="Product Line:" />
+        <TextField fx:id="productLineField" layoutX="180.0" layoutY="405.0" prefWidth="250.0" promptText="e.g. Men's Shirts" />
+
+        <!-- event-5: validation messages (no empty values) -->
+        <Label fx:id="validationMessageLabel" layoutX="50.0" layoutY="440.0" textFill="red" />
+
+        <!-- event-6: save / update supplier, event-7: show confirmation -->
+        <Button fx:id="saveSupplierButton" layoutX="50.0" layoutY="470.0" onAction="#handleSaveSupplier" prefWidth="200.0" text="Save / Update Supplier" />
+
+        <Label fx:id="statusLabel" layoutX="270.0" layoutY="475.0" textFill="green" />
+
+
+        <!-- OPTIONAL: Supplier list table to see all suppliers -->
+        <Label layoutX="480.0" layoutY="300.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Current Suppliers" />
+
+        <TableView fx:id="supplierTable" layoutX="480.0" layoutY="330.0" prefHeight="220.0" prefWidth="380.0">
+            <columns>
+                <TableColumn fx:id="tableSupplierNameColumn" prefWidth="160.0" text="Name" />
+                <TableColumn fx:id="tableContactColumn" prefWidth="110.0" text="Contact" />
+                <TableColumn fx:id="tableProductLineColumn" prefWidth="110.0" text="Product Line" />
+            </columns>
+        </TableView>
+
+    </children>
+</AnchorPane>

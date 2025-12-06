@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_final_project.SalesReturnRefundController">
+
+    <children>
+
+        <Label fx:id="loginMessageLabel" layoutX="150.0" layoutY="170.0" textFill="red" />
+
+
+        <!-- ============ SALES DASHBOARD (EVENT 2) ============ -->
+        <Label layoutX="50.0" layoutY="220.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Sales Dashboard" />
+
+        <!-- event-3: Click “Return/Refund Request.” -->
+        <Button fx:id="openReturnRefundButton" layoutX="50.0" layoutY="255.0" onAction="#handleOpenReturnRefund" prefWidth="220.0" text="Return / Refund Request" />
+
+
+        <!-- ============ RETURN/REFUND AREA (EVENT 4–7) ============ -->
+        <Label layoutX="50.0" layoutY="300.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Process Return / Refund" />
+
+        <!-- event-4: Enter Order ID  -->
+        <Label layoutX="50.0" layoutY="340.0" text="Order ID:" />
+        <TextField fx:id="orderIdField" layoutX="150.0" layoutY="335.0" prefWidth="180.0" promptText="Enter Order ID" />
+
+        <!-- event-4: Enter Return Reason -->
+        <Label layoutX="50.0" layoutY="375.0" text="Reason for Return:" />
+        <TextArea fx:id="reasonArea" layoutX="180.0" layoutY="370.0" prefHeight="90.0" prefWidth="300.0" promptText="Explain return reason..." />
+
+        <!-- event-5: system verifies eligibility, show errors -->
+        <Label fx:id="validationMessageLabel" layoutX="50.0" layoutY="475.0" textFill="red" />
+
+        <!-- event-6: update order status & refund -->
+        <Button fx:id="processRefundButton" layoutX="50.0" layoutY="510.0" onAction="#handleProcessRefund" prefWidth="180.0" text="Process Refund" />
+
+        <!-- event-7: show refund success alert (or label text) -->
+        <Label fx:id="statusLabel" layoutX="250.0" layoutY="515.0" textFill="green" />
+
+    </children>
+</AnchorPane>

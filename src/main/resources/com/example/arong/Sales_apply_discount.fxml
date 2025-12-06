@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_final_project.SalesDiscountController">
+
+    <children>
+
+        <Label fx:id="loginMessageLabel" layoutX="150.0" layoutY="170.0" textFill="red" />
+
+
+        <!-- ============ SALES DASHBOARD (EVENT 2) ============ -->
+        <Label layoutX="50.0" layoutY="220.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Sales Dashboard" />
+
+        <!-- event-3: Click “Apply Discount.” -->
+        <Button fx:id="applyDiscountMenuButton" layoutX="50.0" layoutY="255.0" onAction="#handleOpenApplyDiscount" prefWidth="180.0" text="Apply Discount" />
+
+
+        <!-- ============ ORDER AREA (EXISTING ORDER SUMMARY) ============ -->
+        <Label layoutX="50.0" layoutY="295.0" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Current Order" />
+
+        <TableView fx:id="orderItemsTable" layoutX="50.0" layoutY="320.0" prefHeight="200.0" prefWidth="430.0">
+            <columns>
+                <TableColumn fx:id="productColumn" prefWidth="200.0" text="Product" />
+                <TableColumn fx:id="qtyColumn" prefWidth="60.0" text="Qty" />
+                <TableColumn fx:id="priceColumn" prefWidth="80.0" text="Price" />
+                <TableColumn fx:id="lineTotalColumn" prefWidth="90.0" text="Line Total" />
+            </columns>
+        </TableView>
+
+        <Label layoutX="50.0" layoutY="530.0" text="Original Total:" />
+        <Label fx:id="originalTotalLabel" layoutX="150.0" layoutY="530.0" text="0.00" />
+
+
+        <!-- ============ APPLY DISCOUNT AREA (EVENT 4–7) ============ -->
+        <Label layoutX="530.0" layoutY="295.0" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Discount Section" />
+
+        <!-- event-4: Enter promo code OR discount percentage -->
+        <Label layoutX="530.0" layoutY="330.0" text="Promo Code:" />
+        <TextField fx:id="promoCodeField" layoutX="630.0" layoutY="325.0" prefWidth="180.0" promptText="e.g. NEWYEAR10" />
+
+        <Label layoutX="530.0" layoutY="365.0" text="Discount %:" />
+        <TextField fx:id="discountPercentField" layoutX="630.0" layoutY="360.0" prefWidth="80.0" promptText="10" />
+
+        <!-- event-5: promo code validity / input validation -->
+        <Label fx:id="validationMessageLabel" layoutX="530.0" layoutY="390.0" textFill="red" />
+
+        <!-- event-6: apply discount & update total -->
+        <Button fx:id="applyDiscountButton" layoutX="530.0" layoutY="420.0" onAction="#handleApplyDiscount" prefWidth="150.0" text="Apply Discount" />
+
+        <!-- event-7: display updated order total -->
+        <Label layoutX="530.0" layoutY="460.0" text="Discount Amount:" />
+        <Label fx:id="discountAmountLabel" layoutX="650.0" layoutY="460.0" text="0.00" />
+
+        <Label layoutX="530.0" layoutY="490.0" text="New Total:" />
+        <Label fx:id="newTotalLabel" layoutX="650.0" layoutY="490.0" text="0.00" />
+
+        <Label fx:id="statusLabel" layoutX="530.0" layoutY="520.0" textFill="green" />
+
+    </children>
+</AnchorPane>

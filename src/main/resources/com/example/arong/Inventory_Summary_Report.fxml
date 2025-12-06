@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_final_project.InventorySummaryReportController">
+
+    <children>
+
+        <Label fx:id="loginMessageLabel" layoutX="150.0" layoutY="170.0" textFill="red" />
+
+
+        <!-- ============ INVENTORY DASHBOARD (EVENT 2) ============ -->
+        <Label layoutX="50.0" layoutY="220.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Inventory Dashboard" />
+
+        <!-- event-3: Click “Generate Inventory Report.” -->
+        <Button fx:id="generateReportButton" layoutX="50.0" layoutY="255.0" onAction="#handleGenerateReport" prefWidth="220.0" text="Generate Inventory Report" />
+
+
+        <!-- ============ SUMMARY TABLE (EVENT 4–5) ============ -->
+        <Label layoutX="50.0" layoutY="300.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Inventory Summary (by Product / Category)" />
+
+        <!-- TableView for summary report -->
+        <TableView fx:id="summaryTable" layoutX="50.0" layoutY="330.0" prefHeight="200.0" prefWidth="400.0">
+            <columns>
+                <TableColumn fx:id="productColumn" prefWidth="200.0" text="Product / Category" />
+                <TableColumn fx:id="quantityColumn" prefWidth="100.0" text="Quantity" />
+                <TableColumn fx:id="valueColumn" prefWidth="100.0" text="Stock Value" />
+            </columns>
+        </TableView>
+
+
+        <!-- ============ PIE CHART (EVENT 5) ============ -->
+        <Label layoutX="500.0" layoutY="300.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Stock Value Distribution" />
+
+        <PieChart fx:id="inventoryPieChart" layoutX="500.0" layoutY="330.0" prefHeight="200.0" prefWidth="350.0" />
+
+
+        <!-- ============ EXPORT REPORT (EVENT 6–7) ============ -->
+        <!-- event-6: Click “Export Report” -->
+        <Button fx:id="exportReportButton" layoutX="50.0" layoutY="550.0" onAction="#handleExportReport" prefWidth="150.0" text="Export Report" />
+
+        <!-- event-7: Show “Report Exported Successfully.” -->
+        <Label fx:id="statusLabel" layoutX="220.0" layoutY="555.0" textFill="green" />
+
+    </children>
+</AnchorPane>

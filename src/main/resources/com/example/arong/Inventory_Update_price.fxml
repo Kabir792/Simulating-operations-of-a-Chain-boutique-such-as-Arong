@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_final_project.InventoryUpdatePriceController">
+
+    <children>
+
+        <Label fx:id="loginMessageLabel" layoutX="150.0" layoutY="170.0" textFill="red" />
+
+
+        <!-- ============ INVENTORY DASHBOARD (EVENT 2) ============ -->
+        <Label layoutX="50.0" layoutY="220.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Inventory Dashboard" />
+
+        <!-- ============ PRODUCT TABLE (EVENT 3) ============ -->
+        <Label layoutX="50.0" layoutY="255.0" text="Product List" />
+
+        <TableView fx:id="productTable" layoutX="50.0" layoutY="280.0" prefHeight="220.0" prefWidth="500.0">
+            <columns>
+                <TableColumn fx:id="tableIdColumn" prefWidth="60.0" text="ID" />
+                <TableColumn fx:id="tableNameColumn" prefWidth="160.0" text="Name" />
+                <TableColumn fx:id="tableCategoryColumn" prefWidth="120.0" text="Category" />
+                <TableColumn fx:id="tablePriceColumn" prefWidth="120.0" text="Current Price" />
+            </columns>
+        </TableView>
+
+        <!-- event-3: select product & click “Update Price” -->
+        <Button fx:id="updatePriceButton" layoutX="50.0" layoutY="520.0" onAction="#handleOpenUpdatePrice" prefWidth="150.0" text="Update Price" />
+
+
+        <!-- ============ UPDATE PRICE AREA (EVENT 4–7) ============ -->
+        <Label layoutX="600.0" layoutY="280.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Update Product Price" />
+
+        <Label layoutX="600.0" layoutY="315.0" text="Selected Product:" />
+        <Label fx:id="selectedProductLabel" layoutX="720.0" layoutY="315.0" text="None" />
+
+        <!-- event-4: enter new price -->
+        <Label layoutX="600.0" layoutY="350.0" text="New Price:" />
+        <TextField fx:id="newPriceField" layoutX="720.0" layoutY="345.0" prefWidth="120.0" promptText="e.g. 1999.50" />
+
+        <!-- event-5: validation message (numeric & positive) -->
+        <Label fx:id="validationMessageLabel" layoutX="600.0" layoutY="380.0" textFill="red" />
+
+        <!-- event-6: save price, event-7: confirmation -->
+        <Button fx:id="savePriceButton" layoutX="600.0" layoutY="410.0" onAction="#handleSavePrice" prefWidth="150.0" text="Save Price" />
+
+        <Label fx:id="statusLabel" layoutX="600.0" layoutY="445.0" textFill="green" />
+
+    </children>
+</AnchorPane>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_final_project.SalesTopSellingController">
+
+    <children>
+
+        <Label fx:id="loginMessageLabel" layoutX="150.0" layoutY="170.0" textFill="red" />
+
+
+        <!-- ============ SALES DASHBOARD (EVENT 2 & 3) ============ -->
+        <Label layoutX="50.0" layoutY="220.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Sales Dashboard" />
+
+        <!-- event-3: Click “Top Selling Products.” -->
+        <Button fx:id="topSellingButton" layoutX="50.0" layoutY="255.0" onAction="#handleOpenTopSelling" prefWidth="200.0" text="Top Selling Products" />
+
+
+        <!-- ============ TOP SELLING PRODUCTS AREA (EVENT 4–5) ============ -->
+        <Label layoutX="50.0" layoutY="300.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Top Selling Products" />
+
+        <!-- event-4 & 5: list with sales count -->
+        <TableView fx:id="topSellingTable" layoutX="50.0" layoutY="330.0" prefHeight="220.0" prefWidth="380.0">
+            <columns>
+                <TableColumn fx:id="productNameColumn" prefWidth="200.0" text="Product Name" maxWidth="2000.0"
+                             minWidth="30.0"/>
+                <TableColumn fx:id="salesCountColumn" prefWidth="100.0" text="Sales Count" maxWidth="1000.0"
+                             minWidth="30.0"/>
+                <TableColumn fx:id="rankColumn" prefWidth="80.0" text="Rank" maxWidth="800.0" minWidth="30.0"/>
+            </columns>
+        </TableView>
+
+        <!-- ranking chart (event-5: chart display) -->
+        <Label layoutX="460.0" layoutY="300.0" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Top Selling Ranking Chart" />
+
+        <BarChart fx:id="topSellingBarChart" layoutX="460.0" layoutY="330.0" prefHeight="220.0" prefWidth="430.0">
+            <xAxis>
+                <CategoryAxis label="Product" fx:id="xAxis" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis fx:id="yAxis" label="Sales Count" />
+            </yAxis>
+        </BarChart>
+
+        <!-- status / info label -->
+        <Label fx:id="statusLabel" layoutX="50.0" layoutY="570.0" textFill="green" />
+
+    </children>
+</AnchorPane>

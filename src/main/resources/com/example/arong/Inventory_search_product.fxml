@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_final_project.InventorySearchController">
+
+    <children>
+
+        <Label fx:id="loginMessageLabel" layoutX="150.0" layoutY="170.0" textFill="red" />
+
+
+        <!-- ============ INVENTORY DASHBOARD (EVENT 2) ============ -->
+        <Label layoutX="50.0" layoutY="220.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Inventory Dashboard" />
+
+        <!-- event-3: Click “Search / Filter Products.” -->
+        <Button fx:id="searchFilterButton" layoutX="50.0" layoutY="255.0" onAction="#handleOpenSearchFilter" prefWidth="220.0" text="Search / Filter Products" />
+
+
+        <!-- ============ SEARCH / FILTER AREA (EVENT 4–7) ============ -->
+        <Label layoutX="50.0" layoutY="300.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Search / Filter Products" />
+
+        <!-- event-4: Enter name/category/size -->
+        <Label layoutX="50.0" layoutY="335.0" text="Search by Name / Category / Size:" />
+        <TextField fx:id="searchField" layoutX="300.0" layoutY="330.0" prefWidth="250.0" promptText="e.g. Shirt, M, Jeans" />
+
+        <!-- event-5: validation message -->
+        <Label fx:id="validationMessageLabel" layoutX="50.0" layoutY="365.0" textFill="red" />
+
+        <!-- event-6: trigger DB search -->
+        <Button fx:id="searchButton" layoutX="50.0" layoutY="395.0" onAction="#handleSearch" prefWidth="120.0" text="Search" />
+
+
+        <!-- event-7: Display filtered results in TableView -->
+        <TableView fx:id="productTable" layoutX="50.0" layoutY="430.0" prefHeight="140.0" prefWidth="800.0">
+            <columns>
+                <TableColumn fx:id="productNameColumn" prefWidth="250.0" text="Product Name" />
+                <TableColumn fx:id="categoryColumn" prefWidth="150.0" text="Category" />
+                <TableColumn fx:id="sizeColumn" prefWidth="100.0" text="Size" />
+                <TableColumn fx:id="priceColumn" prefWidth="120.0" text="Price" />
+                <TableColumn fx:id="stockColumn" prefWidth="100.0" text="Stock" />
+            </columns>
+        </TableView>
+
+    </children>
+</AnchorPane>

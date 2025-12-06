@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.oop_final_project.SalesDashboardController"
+            prefWidth="900.0" prefHeight="600.0">
+
+    <children>
+
+        <!-- TITLE AREA -->
+        <Label text="Sales Executive Dashboard"
+               layoutX="50.0" layoutY="30.0"
+               style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+        <Label fx:id="welcomeLabel"
+               text="Welcome, Sales Executive"
+               layoutX="50.0" layoutY="70.0"
+               style="-fx-font-size: 14px;"/>
+
+
+        <!-- MAIN MENU BUTTONS (LEFT COLUMN) -->
+
+        <Button fx:id="createOrderButton"
+                text="Create New Sales Order"
+                layoutX="50.0" layoutY="120.0"
+                prefWidth="260.0"
+                onAction="#handleCreateOrder"/>
+
+        <Button fx:id="invoiceButton"
+                text="Generate Customer Invoice"
+                layoutX="50.0" layoutY="160.0"
+                prefWidth="260.0"
+                onAction="#handleGenerateInvoice"/>
+
+        <Button fx:id="salesSummaryButton"
+                text="View Sales Summary"
+                layoutX="50.0" layoutY="200.0"
+                prefWidth="260.0"
+                onAction="#handleSalesSummary"/>
+
+        <Button fx:id="returnRefundButton"
+                text="Return / Refund Request"
+                layoutX="50.0" layoutY="240.0"
+                prefWidth="260.0"
+                onAction="#handleReturnRefund"/>
+
+        <Button fx:id="applyDiscountButton"
+                text="Apply Promotional Discount"
+                layoutX="50.0" layoutY="280.0"
+                prefWidth="260.0"
+                onAction="#handleApplyDiscount"/>
+
+        <Button fx:id="topSellingButton"
+                text="Top Selling Products"
+                layoutX="50.0" layoutY="320.0"
+                prefWidth="260.0"
+                onAction="#handleTopSelling"/>
+
+        <Button fx:id="cancelOrderButton"
+                text="Cancel Customer Order"
+                layoutX="50.0" layoutY="360.0"
+                prefWidth="260.0"
+                onAction="#handleCancelOrder"/>
+
+        <Button fx:id="notifyCustomerButton"
+                text="Notify Customer (Order Status)"
+                layoutX="50.0" layoutY="400.0"
+                prefWidth="260.0"
+                onAction="#handleNotifyCustomer"/>
+
+        <!-- OPTIONAL: Logout -->
+        <Button fx:id="logoutButton"
+                text="Logout"
+                layoutX="50.0" layoutY="460.0"
+                prefWidth="260.0"
+                onAction="#handleLogout"/>
+
+        <!-- STATUS LABEL (SMALL MESSAGES) -->
+        <Label fx:id="statusLabel"
+               layoutX="50.0" layoutY="520.0"
+               textFill="green"/>
+
+    </children>
+</AnchorPane>

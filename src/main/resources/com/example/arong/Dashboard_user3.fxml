@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.oop_final_project.InventoryDashboardController"
+            prefWidth="900.0" prefHeight="600.0">
+
+    <children>
+
+        <!-- TITLE AREA -->
+        <Label text="Inventory Manager Dashboard"
+               layoutX="50.0" layoutY="30.0"
+               style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+        <Label fx:id="welcomeLabel"
+               text="Welcome, Inventory Manager"
+               layoutX="50.0" layoutY="70.0"
+               style="-fx-font-size: 14px;"/>
+
+
+        <!-- MAIN MENU BUTTONS (LEFT COLUMN) -->
+
+        <Button fx:id="addProductButton"
+                text="Add New Product"
+                layoutX="50.0" layoutY="120.0"
+                prefWidth="220.0"
+                onAction="#handleAddProduct"/>
+
+        <Button fx:id="updateStockButton"
+                text="Update Stock Quantity"
+                layoutX="50.0" layoutY="160.0"
+                prefWidth="220.0"
+                onAction="#handleUpdateStock"/>
+
+        <Button fx:id="lowStockReportButton"
+                text="Low Stock Report"
+                layoutX="50.0" layoutY="200.0"
+                prefWidth="220.0"
+                onAction="#handleLowStockReport"/>
+
+        <Button fx:id="inventorySummaryButton"
+                text="Inventory Summary Report"
+                layoutX="50.0" layoutY="240.0"
+                prefWidth="220.0"
+                onAction="#handleInventorySummary"/>
+
+        <Button fx:id="updatePriceButton"
+                text="Update Product Pricing"
+                layoutX="50.0" layoutY="280.0"
+                prefWidth="220.0"
+                onAction="#handleUpdatePrice"/>
+
+        <Button fx:id="searchFilterButton"
+                text="Search / Filter Products"
+                layoutX="50.0" layoutY="320.0"
+                prefWidth="220.0"
+                onAction="#handleSearchFilter"/>
+
+        <Button fx:id="manageSuppliersButton"
+                text="Manage Suppliers"
+                layoutX="50.0" layoutY="360.0"
+                prefWidth="220.0"
+                onAction="#handleManageSuppliers"/>
+
+        <Button fx:id="archiveProductsButton"
+                text="Archive Discontinued Products"
+                layoutX="50.0" layoutY="400.0"
+                prefWidth="220.0"
+                onAction="#handleArchiveProducts"/>
+
+        <!-- OPTIONAL: Logout button -->
+        <Button fx:id="logoutButton"
+                text="Logout"
+                layoutX="50.0" layoutY="460.0"
+                prefWidth="220.0"
+                onAction="#handleLogout"/>
+
+        <!-- STATUS LABEL (for small messages) -->
+        <Label fx:id="statusLabel"
+               layoutX="50.0" layoutY="520.0"
+               textFill="green"/>
+
+    </children>
+</AnchorPane>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600" prefWidth="900" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_final_project.InventoryUpdateStockController">
+
+    <Label fx:id="loginMessageLabel" layoutX="150" layoutY="170" textFill="red" />
+
+
+    <!-- ============ INVENTORY DASHBOARD (EVENT 2) ============ -->
+    <Label layoutX="50" layoutY="220" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Inventory Dashboard" />
+
+    <!-- ============ PRODUCT TABLE (EVENT 3) ============ -->
+    <Label layoutX="50" layoutY="255" text="Product List" />
+
+    <TableView fx:id="productTable" layoutX="50" layoutY="280" prefHeight="220" prefWidth="500">
+
+        <columns>
+            <TableColumn fx:id="tableIdColumn" prefWidth="60" text="ID" />
+            <TableColumn fx:id="tableNameColumn" prefWidth="160" text="Name" />
+            <TableColumn fx:id="tableCategoryColumn" prefWidth="120" text="Category" />
+            <TableColumn fx:id="tableStockColumn" prefWidth="80" text="Stock" />
+            <TableColumn fx:id="tablePriceColumn" prefWidth="80" text="Price" />
+        </columns>
+
+    </TableView>
+
+    <!-- event-3: Select product in TableView and click “Update Stock.” -->
+    <Button fx:id="updateStockButton" layoutX="50" layoutY="520" onAction="#handleOpenUpdateStock" prefWidth="150" text="Update Stock" />
+
+
+    <!-- ============ UPDATE STOCK AREA (EVENT 4–7) ============ -->
+    <Label layoutX="600" layoutY="280" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Update Stock Quantity" />
+
+    <Label layoutX="600" layoutY="315" text="Selected Product:" />
+    <Label fx:id="selectedProductLabel" layoutX="720" layoutY="315" text="None" />
+
+    <!-- event-4: Enter new stock quantity -->
+    <Label layoutX="600" layoutY="350" text="New Quantity:" />
+    <TextField fx:id="newQuantityField" layoutX="720" layoutY="345" prefWidth="100" promptText="e.g. 25" />
+
+    <!-- event-5: Validate quantity ≥ 0 -->
+    <Label fx:id="validationMessageLabel" layoutX="600" layoutY="380" textFill="red" />
+
+    <!-- event-6: Update product stock in DB, event-7: Show success -->
+    <Button fx:id="saveStockButton" layoutX="600" layoutY="410" onAction="#handleSaveStock" prefWidth="150" text="Save Stock" />
+
+    <Label fx:id="statusLabel" layoutX="600" layoutY="445" textFill="green" />
+
+</AnchorPane>
